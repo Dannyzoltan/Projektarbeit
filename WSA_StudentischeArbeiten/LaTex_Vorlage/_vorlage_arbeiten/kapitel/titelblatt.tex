@@ -1,0 +1,86 @@
+\begin{titlepage}
+\newgeometry{left=23mm,right=-25mm,top=25mm,bottom=-25mm}
+\thispagestyle{titelblatt}
+\ifpdf\pdfbookmark{Titelseite}{title}\fi	% Zum PDF Inhaltsverzeichnis hinzufügen
+
+%\begin{table}[h!]
+%\begin{tabular}{c}
+%{\color{rwthdunkelblau}\rule[-5mm]{213mm}{0,4mm}}
+%\end{tabular}
+%\end{table}
+
+\vspace{15mm}
+\makeatletter
+% Version mit schmalem horizontalem Streifen
+\begin{table}[h!]
+\begin{tabular}{p{3cm}p{15,5cm}}
+& {\color{rwthdunkelblau}\rule[3mm]{130mm}{1,2mm}} \\
+& \large{\textsf{\color{rwthgrau}\universitaet}} \\
+& \large{\textsf{\institut}} \\
+& \large{\textsf{\professor}} \\
+& \large{\textsf{\color{rwthgrau} \www}} \\
+\end{tabular}
+\end{table}
+
+\vspace{40mm}
+
+\begin{table}[h!]
+\begin{tabular}{p{3cm}p{15,5cm}}
+& \changefont{cmss}{smss}{n}\huge{\autoreins , \autorzwei} \\
+\end{tabular}
+\end{table}
+
+\vspace{14mm}
+
+\begin{table}[h!]
+\begin{tabular}{p{3cm}p{15cm}}
+& \huge\textsf{\@title} \\
+& \\
+& \changefont{cmss}{smss}{n}\huge{\color{rwthgrau}\artderarbeit} \\
+\end{tabular}
+\end{table}
+
+\begin{table}[b!]
+\begin{tabular}{p{9cm}p{3cm}p{9cm}}
+%\multicolumn{3}{p{21cm}}{{\color{rwthdunkelblau}\rule[0mm]{213mm}{0,4mm}}} \\
+% schwarze Linie
+% \multicolumn{3}{p{21cm}}{{\color{rwthdunkelblau}\rule[0mm]{213mm}{0,5mm}}} \\
+% dunkelblaue Linie
+% \multicolumn{1}{c}{\includegraphics[scale=0.7]{bilder/rwthtitellogo}} & & \multicolumn{1}{c}{\includegraphics[scale=0.24]{bilder/wsatitellogo}} \\
+%\multicolumn{2}{c}{\includegraphics[scale=1]{bilder/rwth_wsa_kombilogo}} \\
+\end{tabular}
+\end{table}
+
+\restoregeometry
+\newpage
+
+\begin{large}
+\textsf{"`\@title "' (\artderarbeit)} \\
+\\
+\textsf{vorgelegt am \today \ von} \\
+\\
+\textsf{
+\autoreins , Matrikelnummer: \matrikelnummereins \\
+\autorzwei , Matrikelnummer: \matrikelnummerzwei \\
+%\autordrei , Matrikelnummer: \matrikelnummerdrei \\
+%\autorvier , Matrikelnummer: \matrikelnummervire \\
+\\
+betreut durch \betreuer 
+}
+\vfill
+
+\begin{flushright}
+\textsf{RWTH Aachen\\
+Lehrstuhl für Wärme- und Stoffübertragung\\
+Univ.-Prof. Dr.-Ing. Reinhold Kneer\\
+Augustinerbach 6\\
+52062 Aachen\\
+Telefon 0241/80-95400\\
+Telefax 0241/80-92143\\
+info@wsa.rwth-aachen.de\\
+www.wsa.rwth-aachen.de}
+\end{flushright}
+
+\end{large}
+\makeatother
+\end{titlepage}

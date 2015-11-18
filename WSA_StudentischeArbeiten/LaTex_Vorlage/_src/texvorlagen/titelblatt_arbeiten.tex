@@ -1,0 +1,85 @@
+\begin{titlepage}
+\newgeometry{left=23mm,right=-25mm,top=25mm,bottom=-25mm}
+\thispagestyle{titelblatt}
+\ifpdf\pdfbookmark{Titelseite}{title}\fi	% Zum PDF Inhaltsverzeichnis hinzufügen
+
+
+%Kopfzeile
+\begin{table}[h!]
+\begin{tabular}{p{6.64cm}p{13.86cm}p{5cm}}
+ &  \includegraphics[scale=1.0]{../_src/bilder/rwth_wsa_bild_cmyk.pdf} & \\
+\end{tabular}
+\end{table}
+
+
+%Art des Dokuments + Linie
+\vspace{32mm}
+\makeatletter
+
+
+ 
+\begin{table}[h!]
+\begin{tabular}{p{3cm}p{15cm}}
+& \parbox[t][6cm][b]{15cm}{\begin{flushleft}\changefont{phv}{}{}\huge{\color{rwthdunkelblau}\@title}\end{flushleft}}  \\
+& \parbox[t][5cm][t]{15cm}{\changefont{phv}{}{}\Large{von\schreibeautorentitel{\anzahlautoren}}} 
+\end{tabular}
+\end{table}
+
+\vspace{2cm}
+\begin{table}[h!]
+\begin{tabular}{p{3cm}p{15cm}}
+& \parbox[t][5cm][t]{15cm}{\changefont{phv}{}{}\textbf{Diese Arbeit wurde vorgelegt am Lehrstuhl für Wärme- und Stoffübertragung}
+\onehalfspacing \\ 1. Prüfer \quad \pruefereins \\ 2. Prüfer \quad \prueferzwei } 
+
+\end{tabular}
+\end{table}
+
+
+
+%Datum
+\begin{table}[b!]
+\setlength{\tabcolsep}{0mm}
+\begin{tabular}{p{3.5cm}p{6cm}p{13.1cm}}
+& \cellcolor{rwthdunkelblau} \parbox[b][2.5cm][t]{4.4cm}{
+\begin{tabular}{l}
+\rule{0cm}{0cm} 	\\ 
+\changefont{phv}{}{}{\color{white}\textbf{\artderarbeit}}	 \\ 
+\changefont{phv}{}{}{\color{white}\textbf{Aachen, den \today}	}
+\end{tabular}}
+  &										\\
+
+\end{tabular}
+\end{table}
+
+
+
+\restoregeometry
+\newpage
+
+\begin{large}
+\textsf{"`\@title "' (\artderarbeit)} \\
+\\
+\textsf{vorgelegt am \abgabedatum \ von} \\
+\\
+\textsf{
+\schreibeautorentitelzwei{\anzahlautoren}
+\\
+betreut durch \betreuer 
+}
+\vfill
+
+\begin{flushright}
+\textsf{\universitaet\\
+\institut\\
+\professor\\
+\institutsanschrifteins\\
+\institutsanschriftzwei\\
+\institutstelefon\\
+\institutstelefax\\
+\www\\
+\email}
+\end{flushright}
+
+\end{large}
+\makeatother
+\end{titlepage}

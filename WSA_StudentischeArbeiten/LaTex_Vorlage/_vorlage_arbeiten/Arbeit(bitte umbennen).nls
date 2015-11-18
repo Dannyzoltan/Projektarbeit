@@ -1,0 +1,46 @@
+
+
+
+\begin{thenomenclature}
+%
+ \begin{longtable}[l]%
+ {cp{\textwidth*\real{0.6}}c!{\extracolsep{\fill}}ll} 
+	
+
+\multicolumn{3}{l}{\nomgroup{G}}
+ \\\nopagebreak
+ 		\\\nopagebreak\toprule\nopagebreak
+ 
+ 		\bfseries Symbol & \bfseries Definition & & \bfseries Einheit &\\\nopagebreak\toprule\nopagebreak
+\endfirsthead
+		\\\nopagebreak\toprule\nopagebreak
+ 
+ 		\bfseries Symbol & \bfseries Definition & & \bfseries Einheit &\\\nopagebreak\toprule\nopagebreak
+\endhead
+	{$\alpha $}&\begingroup Wärmeübergangskoeffizient\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {W}{m^2K}$\endgroup &\begingroup \nomeqref {0.0}\nompageref{vi} \\
+{$\lambda $}&\begingroup Wärmeleitfähigkeit\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {W}{mK}$\endgroup &\begingroup \nomeqref {0.0}\nompageref{vi} \\
+\toprule\\*[\parskip]
+ \end{longtable} 
+
+
+ 	\begin{longtable}[l]%
+ 	{cp{\textwidth*\real{0.6}}c!{\extracolsep{\fill}}lll}
+
+
+	
+
+\multicolumn{3}{l}{\nomgroup{K}}
+ \\\nopagebreak
+ 		\\\nopagebreak\toprule\nopagebreak
+ 
+ 		\bfseries Symbol & \bfseries Definition & & \bfseries Einheit &\\\nopagebreak\toprule\nopagebreak
+\endfirsthead
+		\\\nopagebreak\toprule\nopagebreak
+ 
+ 		\bfseries Symbol & \bfseries Definition & & \bfseries Einheit &\\\nopagebreak\toprule\nopagebreak
+\endhead
+	{Nu}&\begingroup Nusselt-Zahl\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {\alpha L}{\lambda }$\endgroup &\begingroup \nomeqref {0.0}\nompageref{vi} \\
+\toprule\nopagebreak
+ \end{longtable} 
+
+ \end{thenomenclature}

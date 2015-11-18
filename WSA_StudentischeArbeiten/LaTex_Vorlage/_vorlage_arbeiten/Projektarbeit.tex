@@ -1,0 +1,214 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 Hauptdatei - wiss. Arbeit, WSA RWTH Aachen			       %
+%                                00.00.0000		                               %
+%------------------------------------------------------------------------------%
+%                                Arbeit.tex                                    %
+%                           by Name, Name und Name                             %
+%      vorname.nachname@rwth-aachen.de/vorname.nachname@rwth-aachen.de         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% BITTE LESEN!!! ---------------------------------------------------------------
+%   Diese Vorlage ist im Rahmen meiner Hiwi-Tätigkeit am WSA im Frühjahr 2013 
+%	entstanden. Da es sich hier um die einseitige Vorlage handelt, ist sie
+%	besonders für wissenschaftliche Arbeiten wie Studien-, Projekt-, Bachelor-,
+%	Master- oder Diplomarbeiten gedacht.
+%	Die Vorlage arbeitet mit JabRef zur Verwaltung der Literaturquellen, das 
+%	daher als zusätzliche Software benötigt wird: http://jabref.sourceforge.net
+%	Eine vorbereitete literatur.bib liegt im Hauptverzeichnis bereit und kann
+%	an die eigenen Wünsche angepasst werden.
+%	Alle eingebundenen Kapitel liegen im Unterordner 'kapitel', Bilder, 
+%	Diagramme und Skizzen in den weiteren, entsprechend bennanten Ordnern.
+%	Anhänge, wie z.B. Zeichnungen und Tabellen bitte im Ordner 'anhang' ablegen.
+%
+%	WICHTIG!!!
+%
+%	Damit das Literaturverzeichnis und das Abkürzungsverzeichnis korrekt 
+%	erstellt werden, müssen die Befehle Bibtex und Makeindex ausgeführt werden.
+%	Wie diese Befehle beim Kompilieren ausgeführt werden können, hängt von der
+%	verwendeten Software ab. Bei Texmaker kann man die Kommandos unter 
+%	'Optionen' > 'Texmaker konfigurieren' einstellen und dann im Tab 'Schnelles
+%	Übertsetzen' nach eigenen Wünschen zusammenstellen.
+%	Ich empfehle: PdfLaTex > Bibtext > Makeindex > PdfLaTeX > View PDF
+%	Der Makeindex-Befehl muss dabei wie folgt lauten:
+%	makeindex %.idx -s mynomentbl.ist -o %.nls %.nlo
+%	Für die anderen Befehle muss der Standard i.d.R. nicht verändert werden.
+%	
+%	Bei Fragen bitte ich darum die bekannten LaTeX-Ressourcen und den LaTeX-
+%	Leitfaden am WSA zu konsultieren, dort wird eigentlich alles nötige zur
+%	Nutzung dieser Vorlage erklärt. 
+%	Wenn Unklarheiten vorhanden sind, die auf den Aufbau der Vorlage 
+%	zurückzuführen sind, bitte ich um eine Nachricht an mail@tilmanbremer.de
+%	
+%	Im Frühjahr 2013, Tilman Bremer, WSA RWTH Aachen
+% ------------------------------------------------------------------------------
+
+% Dokumenteneinstellungen ------------------------------------------------------
+%   Als Dokumentenklasse wird die 'report' Klasse von Koma-Script verwendet.
+%   Die Schriftgroesse kann hier eingestellt werden (10pt, 11pt, 12pt)
+\documentclass[a4paper,titlepage,12pt,numbers=noenddot,toc=bib,ngerman]{scrreprt}
+% ------------------------------------------------------------------------------
+
+% KOMA Optionen ----------------------------------------------------------------
+\KOMAoptions{captions=tableheading,parskip=full}
+%	Tabllenueberschriften, deutscher Absatzstil
+% ------------------------------------------------------------------------------
+
+% Pakete und Styling -----------------------------------------------------------
+%   Eingebundene Pakete und das Styling sind größtenteils über die Datei 
+%	stylevorlage_arbeiten.sty definiert. Diese sollte nicht geändert werden. 
+%	Werden weitere Pakete benötigt, können diese hier eingebunden werden.
+\usepackage{../_src/stylevorlage_arbeiten}
+\usepackage{colortbl}
+%
+\input{../_src/institutsangaben}
+%	Diese Datei bindet Variablen wie die Anschrift, den Namen des Institutes und
+%	die Telefonnummer ein. Die Angaben können auch an anderer Stelle im Skript
+%	aufgerufen werden und werden so automatisch aktualisiert, wenn jemand die
+%	Datei institutsangaben.tex aktualisiert. Damit der Aufruf funktioniert, 
+%	muss allerdings der Befehl \makeatletter vorangehen und der Befehl
+%	\makeatletter folgen.
+%
+%	Weitere Pakete:
+\usepackage{blindtext} %Um Blindtext zum testen einzufügen
+
+% ------------------------------------------------------------------------------
+
+% Grundlegende Einstellungen ---------------------------------------------------
+%	Die folgenden Einstellungen gelten für das Titelblatt und müssen ent-
+%	sprechend angepasst werden, je nachdem welches Dokument aus dieser Vorlage
+%	erstellt wird.
+%
+\title{Dies ist der Titel der wissenschaftlichen Arbeit, kann ruhig auch etwas länger sein}
+\newcommand{\abgabedatum}{\today}
+
+%	Hier kann auch statt \today das Abgabedatum fest eingetragen werden 
+%	z.B. {01. Januar 2013}
+\newcommand{\pruefereins}{Prof. Dr.-Ing Reinhold Kneer}
+%Hier bitte den Zweitprüfer (Gruppenleiter) eintragen.
+\newcommand{\prueferzwei}{Prüfer Nummer 2}
+\newcommand{\betreuer}{Dipl.-Ing. Max Mustermann}
+\newcommand{\artderarbeit}{Bachelorarbeit}
+\newcommand{\keywords}{Geothermie, Kondensationswärme, Organic Rankine Cycle, Erneuerbare Energien}
+%
+%	Die Anzahl der Autoren muss hier definiert werden (1-5):
+\newcommand{\anzahlautoren}{2}
+%
+%	Autoren und Matrikelnummern können hier eingetragen werden:
+%	Nicht benötigte Felder können gelöscht werden, werden oben
+%	eine größere Anzahl Autoren angegeben als hier zu finden
+%	sind, wird es einen Fehler geben.
+\newcommand{\autoreins}{Tim Taylor}
+\newcommand{\matrikelnummereins}{123456}
+\newcommand{\autorzwei}{Jennifer Lawrence}
+\newcommand{\matrikelnummerzwei}{654321}
+\newcommand{\autordrei}{Henry Kissinger}
+\newcommand{\matrikelnummerdrei}{133777}
+\newcommand{\autorvier}{Donald Duck}
+\newcommand{\matrikelnummervier}{314159}
+\newcommand{\autorfuenf}{Dr. Sybille Leuthhäuser-Schnarrenberger}
+\newcommand{\matrikelnummerfuenf}{314159}
+% ------------------------------------------------------------------------------
+
+% Hyperref / PDF Einstellungen -------------------------------------------------
+%   Hyperref bzw. PDF Einstellungen (PDF links, Bookmarks, Info-Felder, etc.)
+%   Einstellungen koennen mittels Paketoptionen, mittels \hypersetup{} oder 
+%	mit der Konfigurationsdatei 'hyperref.cfg' veraendert werden.
+\makeatletter
+\hypersetup{
+%	Bei mehr als einem Autor hier weitere Autoren \autorzwei, \autordrei usw.
+%	einfügen!
+ pdfauthor={\schreibeautorenpdf{\anzahlautoren}},
+ pdftitle={\@title},
+ pdfsubject={\artderarbeit , \universitaet},
+ pdfkeywords={\keywords},
+ backref=true,
+ pagebackref=false, 
+%   Diese Option kann aktiviert werden, dann wird im u.a. im Literaturverzeichnis 
+%   ausgegeben, auf welcher Seite / welchen Seiten die Quelle genutzt wurde.
+ hyperfigures,
+ hyperindex,
+ bookmarksopen,
+ bookmarksopenlevel=1,
+ bookmarksnumbered,
+ pageanchor,
+ plainpages=false,
+%   Hyperlink Farben:
+ urlcolor=black,
+ pagecolor=black,
+ menucolor=black,
+ citecolor=black,
+ anchorcolor=black,
+ filecolor=black,
+ linkcolor=black,
+ colorlinks=true, 
+%   Links einfaerben oder umranden
+}
+\makeatother
+% ------------------------------------------------------------------------------
+
+% Includeonly ------------------------------------------------------------------
+%   Verwende \includeonly{name1,name2,...} um nur ausgewaehlte Dateien 
+%  (~Kapitel) einzubinden.
+%  Dies beschleunigt die Kompilierung während der Schreibphase.
+% \includeonly{kapitel/titelblatt}
+% ------------------------------------------------------------------------------
+
+% Ende des Headers, Beginn des Dokumentes --------------------------------------
+\begin{document}
+% ------------------------------------------------------------------------------
+
+% Einstellungen für die Titelseiten (Titelblatt, Inhaltsverzeichnis, usw.) -----
+%   'roman' gibt roemische Kleinbuchstaben als Seitennummern 
+%   (i,ii,iii,iv,v,vi,...). 'Roman' gibt Grossbuchstaben.
+\pagenumbering{roman} 
+% ------------------------------------------------------------------------------
+
+% "Sonderkapitel" ganz am Anfang des Dokumentes einbinden ----------------------
+\input{../_src/texvorlagen/titelblatt_arbeiten}
+\include{kapitel/selbststaendigkeitserklaerung}
+\include{kapitel/zusammenfassung}
+\include{kapitel/abkuerzungen}
+% ------------------------------------------------------------------------------
+
+% Automatisch generierte Kapitel einbinden -------------------------------------
+%  	Damit das Inhaltsverzeichnis einen PDF Bookmark Eintrag erhält.
+\ifpdf\pdfbookmark{\contentsname}{tableofcontents}\fi
+%	Die folgenden Kapitel erhalten einen einfachen Zeilenabstand, sonst wird das
+%	Inhalts- und Abbildungsverzeichnis unnötig lang.
+{\singlespacing
+\tableofcontents
+%	Inhaltsverzeichnis
+\listoffigures   
+%	Abbildungsverzeichnis
+%\listoftables 
+%	Tabellenverzeichnis
+%	Nomenklatur / Abkürzungsverzeichnis
+\printnomenclature
+}
+% ------------------------------------------------------------------------------
+
+% Einstellungen für gewöhnliche Seiten -----------------------------------------
+%   Ab hier werden mit 'arabic' normale Seitennummern eingefügt.
+\clearpage
+\pagenumbering{arabic}
+% ------------------------------------------------------------------------------
+
+% Hier werden alle weitern Kapitel eingebunden ---------------------------------
+\include{kapitel/einleitung}
+\include{kapitel/grundlagen}
+\include{Versuche}
+\include{kapitel/ausblick}
+% ------------------------------------------------------------------------------
+
+% Anhang -----------------------------------------------------------------------
+\appendix
+\clearpage
+\pagenumbering{Roman}
+\include{kapitel/literatur}
+\include{kapitel/anhang}
+\include{anhang/raender}
+% ------------------------------------------------------------------------------
+
+% Ende des Headers, Beginn des Dokumentes --------------------------------------
+\end{document}
+% ------------------------------------------------------------------------------

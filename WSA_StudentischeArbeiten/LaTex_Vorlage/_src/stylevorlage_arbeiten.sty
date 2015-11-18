@@ -1,0 +1,331 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents: Style Package - Wiss. Arbeit, WSA RWTH Aachen  	    %
+%                          				                        %
+%---------------------------------------------------------------%
+%                  stylevorlage_arbeiten.sty                    %
+%																%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\ProvidesPackage{stylevorlage_arbeiten}
+
+% Pakete -----------------------------------------------------------------------
+%   Hier werden benoetigte Pakete geladen. Manche sind nicht immer noetig und  
+%   koennen nach eigenen Geschmack entfernt werden. Zum experimentieren einfach 
+%   die Zeile mit einem '%' Zeichen auskommentieren.
+% ------------------------------------------------------------------------------
+
+% ifpdf ------------------------------------------------------------------------
+%   Gibt den Schalter \ifpdf, der angibt ob PDF oder DVI/PS ausgegeben wird.
+%   Wird f�r andere Pakete und Einstellungen ben�tigt.
+\usepackage{ifpdf}
+% ------------------------------------------------------------------------------
+
+% Farbe -------------------------------------------------------------------------
+%   Erweiterte Unterstuetzung von Farben. Die 'cmyk' Option behebt Farbprobleme 
+%   wenn Transparenz verwenden wird.
+%\usepackage[cmyk]{xcolor}%
+% Paket zur Einfärbung von Tabellenzellen
+\usepackage{colortbl} 
+% ------------------------------------------------------------------------------
+
+% filecontents -----------------------------------------------------------------
+%   Erlaubt LaTeX-Code in andere Dateien zu schreiben
+\usepackage{filecontents}
+% ------------------------------------------------------------------------------
+
+% Hyperlinks -------------------------------------------------------------------
+%   Zum Beispiel Links aus dem Inhaltsverzeichnis zu den Kapiteln
+\usepackage{hyperref}
+% ------------------------------------------------------------------------------
+
+% graphicx ---------------------------------------------------------------------
+%   Zum Einbinden von Bildern
+\usepackage{graphicx}
+% ------------------------------------------------------------------------------
+
+% pdfpages ---------------------------------------------------------------------
+%   Andere PDF Dokumente einbinden (z.B. als Anhang)
+\usepackage{pdfpages}
+% ------------------------------------------------------------------------------
+
+% Definition von verwendeten Graphikformaten -----------------------------------
+\ifpdf
+  \DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+% ------------------------------------------------------------------------------
+
+% Anpassung an Landessprache ---------------------------------------------------
+%   'ngerman' ist die Deutsche Sprache mit neuer Rechtschreibung
+%   '[latin1]{inputenc}' erlaubt deutsche Umlaute in .tex Dateien. Je nach System
+%   kann statt 'latin1' auch 'utf8' o.a. verwendet werden
+%   '[T1]{fontenc}' verwendet T1 Schriften
+%   'lmodern': Schriftart mit deutschen Umlauten
+%	'textcomp' f�r Eurozeichen etc.
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{varioref}
+\usepackage[utf8]{inputenc}  
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\newcommand{\changefont}[3]{
+\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}  
+%	Vereinfacht den Schriftwechsel beim Schreiben, im Text kann zum Beispiel dann
+%	\changefont{cmr}{b}{n} geschrieben werden.   
+\usepackage{lmodern}         
+\usepackage{textcomp}
+% ------------------------------------------------------------------------------
+
+% Mathematikumgebung -----------------------------------------------------------
+%   amsmath, amssymb und amsfonts erm�glichen die Mathematik-Umgebung
+%   units erm�glicht die Nutzung von \unit[]{} und \unitfrac[]{}{}
+%   gensymb erm�glicht die Nutzung von \degree statt z.B. ^{\circ},\micro und 
+%   weitere in der \unit-Umgebung 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{units}
+\usepackage{gensymb}
+\usepackage{icomma}
+% ------------------------------------------------------------------------------
+
+% Zeilenabstand ----------------------------------------------------------------
+\usepackage{setspace}
+%\singlespacing  % Einfacher Zeilenabstand
+\onehalfspacing  % 1,5 Zeilen (entspricht ang. dem doppelten Zelenabstand in Word)
+%\doublespacing  % Doppelter Zeilenabstand
+\frenchspacing   % Kein doppeltes Leerzeichen nach '.' etc.
+% ------------------------------------------------------------------------------
+
+% Silbentrennung ---------------------------------------------------------------
+%   Mit folgenden Werten kann man die Silbentrennung einstellen (0..10000).
+%   \hyphenpenalty=10000
+%   \exhyphenpenalty=10000
+%   \hyphenpenalty=10
+%   \exhyphenpenalty=10
+
+% Schusterjungen und Hurenkinder -----------------------------------------------
+% Hiermit werden Schusterjungen und Hurenkinder verhindert
+% Zur Info:
+% http://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+% ------------------------------------------------------------------------------
+
+% �berschriften ----------------------------------------------------------------
+%   Hier stellt man ein bis zu welcher Ordnung �berschriften nummeriert werden 
+%   (Beginnt bei 0 (Kapitel) und geht bis 5 (Subparagraph)
+\setcounter{secnumdepth}{3}	
+%   Hier stellt man ein bis zu welcher Ordnung �berschriften ins
+%   Inhaltsverzeichnis �bernommen werden (ebenfalls 0 - 5)
+\setcounter{tocdepth}{3}
+% ------------------------------------------------------------------------------
+
+% Tabellen ---------------------------------------------------------------------
+\usepackage{multirow}
+\usepackage{longtable}
+%	Ueberlange Tabellen ueber mehrere Seiten
+\usepackage{tabularx} %Um neue Zellentypen zu definieren
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% ------------------------------------------------------------------------------
+
+% Anzahl und max. Seitenanteil von Abbildungen und Tabellen einstellen ---------
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{5}
+\renewcommand{\bottomfraction}{.9}
+\renewcommand{\textfloatsep}{3ex}
+\renewcommand{\floatsep}{3ex}
+% ------------------------------------------------------------------------------
+
+% Seitenlayout --------------------------------------------------------------------
+\usepackage{geometry}
+\usepackage{vmargin}
+\setmarginsrb{35mm}{20mm}{25mm}{20mm} % 
+			 {7mm}{15mm}{4mm}{20mm}
+% ------------------------------------------------------------------------------
+
+% Kopfzeile --------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\headheight=20pt
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+%   Definiert, dass das Kapitel in der Kopfzeile wie folgt formatiert wird: 
+%   "Nummer. Name" also z.B. "2. Stand der Technik", LaTeX Standard ist 
+%   "Kapitel Nummer. Name" also "Kapitel 2. Stand der Technik".
+\lhead{\nouppercase{\leftmark}}
+%   Bindet den Namen des Chapters oben Rechts in die Kopfzeile ein, LaTeX
+%   Standard ist, dass dieser bei zweiseitigen Dokumenten in der linken 
+%   Kopfzeile auftaucht, und dadurch in einem einseitigem Dokument gar nicht 
+%   erscheinen w�rde.
+\renewcommand{\headrulewidth}{0.4pt}
+%   Breite der Linie in der Kopfzeile
+% ------------------------------------------------------------------------------
+
+% Fu�zeile ---------------------------------------------------------------------
+\rfoot{\thepage}
+% \rhead{\thepage}
+%   Bindet die Seitennummer unten Rechts, bzw. bei zweiseitigen Dokumenten
+%   au�en ein. \cfoot{\thepage} w�rde die Seitennummer mittig zentrieren.
+% ------------------------------------------------------------------------------
+
+% Pagestyle --------------------------------------------------------------------
+%    Die Einstellungen f�r "plain" definieren z.B. wie die erste Seite eines 
+%    Kapitels aussieht, oder z.B. auch die erste Seite des Inhaltsverzeichnis. 
+%    In diesem Fall, soll keine Linie in der Kopfzeile sein => 0pt. 
+\fancypagestyle{plain}{
+\fancyhf{}
+\headheight=20pt
+%\rhead{{\includegraphics[scale=0.2]{../_src/bilder/rwthlogo}}{\includegraphics[scale=0.069]{../_src/bilder/wsalogo}}}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+}
+%	Folgendes Styling ist f�r das Titelblatt gedacht:
+\fancypagestyle{titelblatt}{
+\fancyhf{}
+\rfoot{Test}
+}
+% ------------------------------------------------------------------------------
+
+% Literaturverzeichnis ---------------------------------------------------------
+%   Das Paket natbib erzeugt das Literaturverzeichnis im 
+%   naturwissenschaftlichen Standard.
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,} 
+%   Setzt die Zitate in runde Klammer und trennt mehrer Eintr�ge mit Komma in 
+%   der gleichen Klammer.
+% ------------------------------------------------------------------------------
+
+% Farben -----------------------------------------------------------------------
+\definecolor{rwthdunkelblau}{cmyk}{1,0.5,0,0}
+\definecolor{rwthhellblau}{cmyk}{0.45,0.14,0,0}
+% Die beiden Farben des RWTH Logos, werden f�rs Deckblatt genutzt.
+% Infos hier: http://www9.rwth-aachen.de/go/id/lnf/
+\definecolor{rwthgrau}{cmyk}{0,0,0,0.6}
+% Hierbei handelt es sich nicht wirklich um eine RWTH Corporate-Design-Farbe
+% ------------------------------------------------------------------------------
+
+% Datum ------------------------------------------------------------------------
+%	Diese Definition wird ben�tigt um auf der Titelseite nur Monat und Jahr aus-
+%	zugeben.
+\usepackage{datetime}
+\newdateformat{titledate}{\monthname[\THEMONTH] \THEYEAR}
+%\newdateformat{titledate}{\today}
+% ------------------------------------------------------------------------------
+
+% Abfragen um das Titelblatt entsprechend der Auorenanzahl zu schreiben --------
+%
+%	Gibt die Autoren untereinander aus (f�r die erste Seite des Titelblattes):
+%
+\newcommand{\schreibeautorentitel}[1]
+{
+  \ifnum#1=1 \autoreins \fi
+  \ifnum#1=2 \autoreins \newline \autorzwei \fi
+  \ifnum#1=3 \autoreins \newline \autorzwei \newline \autordrei \fi
+  \ifnum#1=4 \autoreins \newline \autorzwei \newline \autordrei \newline \autorvier\fi
+  \ifnum#1=5 \autoreins \newline \autorzwei \newline \autordrei \newline \autorvier \newline \autorfuenf\fi
+}
+%
+%	Gibt die Autoren mit Matrikelnummern untereinander aus (zweite Seite des
+%	Titelblattes)
+%
+\newcommand{\schreibeautorentitelzwei}[1]
+{
+  \ifnum#1=1 
+  \autoreins , Matrikelnummer: \matrikelnummereins \\ 
+  \fi
+  \ifnum#1=2 
+  \autoreins , Matrikelnummer: \matrikelnummereins \\
+  \autorzwei , Matrikelnummer: \matrikelnummerzwei \\
+  \fi
+  \ifnum#1=3 
+  \autoreins , Matrikelnummer: \matrikelnummereins \\
+  \autorzwei , Matrikelnummer: \matrikelnummerzwei \\
+  \autordrei , Matrikelnummer: \matrikelnummerdrei \\
+  \fi
+  \ifnum#1=4 
+  \autoreins , Matrikelnummer: \matrikelnummereins \\
+  \autorzwei , Matrikelnummer: \matrikelnummerzwei \\
+  \autordrei , Matrikelnummer: \matrikelnummerdrei \\
+  \autorvier , Matrikelnummer: \matrikelnummervier \\ 
+  \fi
+  \ifnum#1=5 
+  \autoreins , Matrikelnummer: \matrikelnummereins \\
+  \autorzwei , Matrikelnummer: \matrikelnummerzwei \\
+  \autordrei , Matrikelnummer: \matrikelnummerdrei \\
+  \autorvier , Matrikelnummer: \matrikelnummervier \\ 
+  \autorfuenf , Matrikelnummer: \matrikelnummerfuenf \\  
+  \fi
+}
+%
+%	Gibt die Autoren als Aufz�hlung kommagetrennt aus. F�r die PDF-Infos.
+%
+\newcommand{\schreibeautorenpdf}[1]
+{
+  \ifnum#1=1 \autoreins \fi
+  \ifnum#1=2 \autoreins , \autorzwei \fi
+  \ifnum#1=3 \autoreins , \autorzwei , \autordrei \fi
+  \ifnum#1=4 \autoreins , \autorzwei , \autordrei , \autorvier\fi
+  \ifnum#1=5 \autoreins , \autorzwei , \autordrei , \autorvier , \autorfuenf\fi
+}
+% ------------------------------------------------------------------------------
+
+% Abk�rzungsverzeichnis --------------------------------------------------------
+\usepackage{ifthen}
+\usepackage{paralist}
+\usepackage{makeidx}
+%   Das Paket nomentbl erstellt ein automatisch sortiertes Abk�rzungsverzeichnis
+\usepackage{nomentbl}
+%   Das Paket booktabs erlaubt die Nutzung von \midrule, \bottomrule und \toprule
+\usepackage{booktabs} 
+%   Befehl Umbenennen in "abk", damit kann sp�ter mit \abk{} statt \nomenclature
+%   gearbeitet werden kann
+\newcommand{\abk}{\nomenclature}
+% 	Deutsche �berschrift "Abkürzungsverzeichnis"
+\renewcommand{\nomname}{Abk{\"u}rzungsverzeichnis}
+%	Punkte zwischen Abk�rzung und Erkl�rung
+\setlength{\nomlabelwidth}{.20\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% 	Zeilenabst�nde verkleinern
+\setlength{\nomitemsep}{-\parsep}
+%	Einteilung der Abk�rzungen
+\renewcommand\nomgroup[1]{% 
+   \ifx#1L\relax 
+     \large \bfseries Lateinische Formelzeichen 
+   \fi 
+   \ifx#1G\relax 
+     \large \bfseries Griechische Formelzeichen
+   \fi 
+   \ifx#1A\relax 
+     \large \bfseries Abk{\"u}rzungen 
+   \fi 
+   \ifx#1I\relax 
+     \large \bfseries Indizes 
+   \fi
+   \ifx#1K\relax 
+     \large \bfseries Kennzahlen
+   \fi
+    \ifx#1W\relax 
+     \large \bfseries Kennwert
+   \fi}
+
+   
+
+\makeatletter 
+\def\@@@nomenclature[#1]#2#3#4#5{% 
+   \def\@tempa{#2}\def\@tempb{#3}% 
+   \protected@write\@nomenclaturefile{}% 
+   {\string\nomenclatureentry{% 
+     #1\nom@verb\@tempa @{\nom@verb\@tempa}&% 
+     \begingroup\nom@verb\@tempb\endgroup &\begingroup#4\endgroup&% 
+     \begingroup#5\endgroup&\begingroup\protect\nomeqref{\theequation}% 
+     |nompageref}{\thepage}}% 
+   \endgroup 
+   \@esphack} 
+\renewcommand\nomenclature[4][]{\@nomenclature[#1]{#2}{#3}{}{#4}}    
+\makeatother 
+
+\makenomenclature
+% ------------------------------------------------------------------------------

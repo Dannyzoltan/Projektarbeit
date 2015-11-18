@@ -1,0 +1,83 @@
+% This file was created with JabRef 2.8.1.
+% Encoding: Cp1252
+
+@INCOLLECTION{Bidini1999,
+  author = {Gianni Bidini and Umberto Desideri and Francesco Di Maria},
+  title = {A single fash integrated gas turbine-geothermal power plant with
+	non condensable gas combustion},
+  booktitle = {Geothermics},
+  publisher = {Pergamon},
+  year = {1999},
+  volume = {28},
+  pages = {131-150},
+  owner = {tbr},
+  timestamp = {2012.10.29}
+}
+
+@BOOK{Kneer2009,
+  title = {Vorlesung / Wärme- und Stoffübertragung},
+  publisher = {Lehrstuhl für Wärme- und Stoffübertragung},
+  year = {2009},
+  author = {Professor Dr.-Ing. R. Kneer},
+  owner = {tbr},
+  timestamp = {2012.11.07}
+}
+
+@BOOK{Lucas2008,
+  title = {Thermodynamik - Die Grundgesetze der Energie- und Stoffumwandlung},
+  publisher = {Springer Verlag},
+  year = {2008},
+  author = {Prof. Dr. Klaus Lucas},
+  pages = {312-328},
+  doi = {10.1007/978-3-540-68648-4},
+  owner = {tbr},
+  timestamp = {2012.10.16}
+}
+
+@INCOLLECTION{Ma2008,
+  author = {Xue-Hu Ma and Xing-Dong Zhou and Zhong Lan and Yi-Ming LI and Yu
+	Zhang},
+  title = {Condensation heat transfer enhancement in the presence of non-condensable
+	gas using the interfacial effect of dropwise condensation},
+  booktitle = {International Journal of Heat and Mass Transfer},
+  year = {2008},
+  volume = {51},
+  pages = {1728-1737},
+  doi = {10.1016/j.ijheatmasstransfer.2007.07.021},
+  owner = {tbr},
+  timestamp = {2012.11.05}
+}
+
+@INCOLLECTION{Minkowycz1966,
+  author = {W.J. Minkowycz and E.M. Sparrow},
+  title = {Condensation heat transfer in the presence of non-condensables, interfacial
+	resistance, super heating variable properties and diffusion},
+  booktitle = {International Journal of Heat and Mass Transfer},
+  year = {1966},
+  volume = {9},
+  number = {10},
+  pages = {1125-1144},
+  doi = {10.1016/0017-9310(66)90035-4},
+  owner = {tbr},
+  timestamp = {2012.10.29}
+}
+
+@BOOK{NREL2011,
+  title = {2010 Renewable Energy Data Book},
+  publisher = {U.S. Department of Energy},
+  year = {2011},
+  author = {{National Renewable Energy Laboratory (NREL)}},
+  owner = {tbr},
+  timestamp = {2012.10.23}
+}
+
+@comment{jabref-meta: selector_review:}
+
+@comment{jabref-meta: selector_publisher:}
+
+@comment{jabref-meta: selector_author:}
+
+@comment{jabref-meta: selector_journal:}
+
+@comment{jabref-meta: selector_keywords:}
+

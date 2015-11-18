@@ -1,0 +1,120 @@
+%% mynomentbl.ist 
+%% Geschrieben von Valeri Kirsch
+%% Diese Datei ist nur für die Verwendung von wissenschaftlichen Arbeiten im Institut WSA der RWTH Aachen
+%% und natürlich für meine Zwecke.
+%% Jeder Missbrauch wird von mir verfolgt!!!
+
+%% In dieser Datei wird das Layout für die Nomenklatur definiert. Hierzu wird eine Tabelle mit dem Befehl
+%% longtable verwendet, diese können sich über mehrere Seiten hinaus strecken.
+%% Ein Eintrag wird z.B. mit dem Befehl:
+%% \nomenclature[L]{P}{Druck}{bar}
+%% erzeugt. Dabeit Bedeutet L: Lateinische Zeichen(definiert weiter unten), 
+%% P: ist die Abkürzung die definiert werden soll, Druck die Definition und bar die Einheit
+
+
+
+%% Koplementiert wird diese Datei in einem TexProgramm mit dem Befehl:
+%%------------------------------------------------------
+%% makeindex -s mynomentbl.ist -o %.nls %.nlo %.idx %%
+%%------------------------------------------------------
+%% Diese Datei muss dafür im Hauptordner der Arbeit sein.
+
+%% Damit die Nomenklatur funktioniert sollten in dem Tex-Text der Arbeit diese Befehlzeilen stehen.
+%%------------------------------------------------------------------------------------------------------
+%%\usepackage[intoc]{nomentbl}
+%%\usepackage{booktabs} 
+%%
+%% %%Diese Befehle definieren die Abkürzungen und Überschriften für die jeweiligen Gruppen. 
+%%\renewcommand\nomgroup[1]{% 
+%%   \ifx#1L\relax 					%% Hier steht welcher Buchstabe verwendet werden soll
+%%     \large\bfseries Lateinische Formelzeichen  	%% und hier Welche Überschrift dazu gehört
+%%   \fi 
+%%   \ifx#1G\relax 
+%%     \large\bfseries Griechische Formelzeichen 
+%%   \fi 
+%%   \ifx#1A\relax 
+%%     \large\bfseries Abkürzungen 
+%%   \fi 
+%%   \ifx#1I\relax 
+%%     \large\bfseries Indizes 
+%%   \fi
+%%   \ifx#1K\relax 
+%%     \large\bfseries Kennzahlen
+%%   \fi 
+%%}
+%% %% Diese Zeilen definieren den Befehl nomenclature um damit die Einheit schon in der Dritten Klammer steht
+%%\makeatletter 
+%%\def\@@@nomenclature[#1]#2#3#4#5{% 
+%%   \def\@tempa{#2}\def\@tempb{#3}% 
+%%   \protected@write\@nomenclaturefile{}% 
+%%   {\string\nomenclatureentry{% 
+%%     #1\nom@verb\@tempa @{\nom@verb\@tempa}&% 
+%%     \begingroup\nom@verb\@tempb\endgroup &\begingroup#4\endgroup&% 
+%%     \begingroup#5\endgroup&\begingroup\protect\nomeqref{\theequation}% 
+%%     |nompageref}{\thepage}}% 
+%%   \endgroup 
+%%   \@esphack} 
+%%\renewcommand\nomenclature[4][]{\@nomenclature[#1]{#2}{#3}{}{#4}} 
+%%\makeatother 
+%%-------------------------------------------------------------------------------------------------------
+
+
+
+%% Anfang der Befehle in der Datei
+
+
+%% \n bedeut eine neue Zeile in den Dateien die mit dieser erzeugt werden z.B. %.nls.
+
+ actual '@' 
+ quote '%' 
+ delim_0   "" 
+ delim_1   "" 
+ delim_2   "" 
+ item_0    "" 
+ delim_t   " \\\\\n" %% definiert was das Trennzeichen sein soll zwischen den Gruppeneinträgen
+ line_max  1000 
+ headings_flag    1 
+ 
+ group_skip       
+ "\\toprule\\\\*[\\parskip]\n \\end{longtable} \n\n
+ 	\\begin{longtable}[l]%
+ 	{cp{\\textwidth*\\real{0.6}}c!{\\extracolsep{\\fill}}lll}\n\n" %% definiert was das Trennzeichen zwischen den Gruppen sein soll
+
+%%  Anfang von der Nomenklatur  
+preamble 
+ "
+
+\n\\begin{thenomenclature}\n%
+ \\begin{longtable}[l]%
+ {cp{\\textwidth*\\real{0.6}}c!{\\extracolsep{\\fill}}ll} "
+ 	
+	%% Anfang jeder Gruppe und mit dem Zweiten Teil die Überschrift
+ 	heading_prefix 
+ 	"
+	\n\n\\multicolumn{3}{l}{\\nomgroup{" 
+		
+		%% Hier wird die Eckige Klammer eingefügt 
+
+	%% Zweiter Teil der Überschrift
+	heading_suffix 
+ 	"}}\n \\\\\\nopagebreak
+ 		\\\\\\nopagebreak\\toprule\\nopagebreak\n 
+ 		\\bfseries Symbol & \\bfseries Definition & & \\bfseries Einheit &\\\\\\nopagebreak\\toprule\\nopagebreak\n\\endfirsthead
+		\\\\\\nopagebreak\\toprule\\nopagebreak\n 
+ 		\\bfseries Symbol & \\bfseries Definition & & \\bfseries Einheit &\\\\\\nopagebreak\\toprule\\nopagebreak\n\\endhead
+	"
+	
+		%% Hier werden die die geschweiften Klammern eingefügt.
+
+ %% Endzeilen der Nomenklatur
+ postamble 
+ "\\toprule\\nopagebreak\n \\end{longtable} \n\n \\end{thenomenclature}\n" 
+ 
+
+
+ keyword 
+ "\\nomenclatureentry"
+
+%% Ende der Befehle
+
+def\abc{heading_prefix"\\nomgroup{" heading_suffix"}}"} 

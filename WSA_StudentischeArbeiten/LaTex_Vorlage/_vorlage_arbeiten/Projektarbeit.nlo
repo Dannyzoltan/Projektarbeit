@@ -1,0 +1,3 @@
+\nomenclatureentry{G$\lambda $@{$\lambda $}&\begingroup Wärmeleitfähigkeit\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {W}{mK}$\endgroup &\begingroup \nomeqref {0.0}|nompageref}{vi}
+\nomenclatureentry{G$\alpha $@{$\alpha $}&\begingroup Wärmeübergangskoeffizient\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {W}{m^2K}$\endgroup &\begingroup \nomeqref {0.0}|nompageref}{vi}
+\nomenclatureentry{KNu@{Nu}&\begingroup Nusselt-Zahl\endgroup &\begingroup \endgroup &\begingroup $\unitfrac  {\alpha L}{\lambda }$\endgroup &\begingroup \nomeqref {0.0}|nompageref}{vi}

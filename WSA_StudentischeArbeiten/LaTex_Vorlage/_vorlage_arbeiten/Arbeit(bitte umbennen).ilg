@@ -1,0 +1,72 @@
+This is makeindex, version 2.15 [MiKTeX 2.9] (kpathsea + Thai support).
+Scanning style file X:/WSA/Vorlagen/vorlagen_studenten/studentische_arbeiten/Archiv/WSA_StudentischeArbeiten/LaTex_Vorlage/_vorlage_arbeiten/mynomentbl.ist...............
+** Input style error (file = X:/WSA/Vorlagen/vorlagen_studenten/studentische_arbeiten/Archiv/WSA_StudentischeArbeiten/LaTex_Vorlage/_vorlage_arbeiten/mynomentbl.ist, line = 120):
+   -- Unknown specifier def\abc{heading_prefix"\\nomgroup{".
+done (15 attributes redefined, 1 ignored).
+Scanning input file Arbeit(bitte umbennen).idx...!! Input index error (file = Arbeit(bitte umbennen).idx, line = 4):
+   -- Unknown index keyword \begin.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 5):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 6):
+   -- Unknown index keyword \begin.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 7):
+   -- Unknown index keyword {cp.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 10):
+   -- Unknown index keyword \multicolumn.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 11):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 12):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 14):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 15):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 16):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 18):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 19):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 20):
+   -- Unknown index keyword {$\alpha$}&\begingroupWärmeübergangskoeffizient\endgroup&\begingroup\endgroup&\begingroup$\unitfrac.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 21):
+   -- Unknown index keyword {$\lambda$}&\begingroupWärmeleitfähigkeit\endgroup&\begingroup\endgroup&\begingroup$\unitfrac.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 22):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 23):
+   -- Unknown index keyword \end.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 26):
+   -- Unknown index keyword \begin.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 27):
+   -- Unknown index keyword {cp.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 32):
+   -- Unknown index keyword \multicolumn.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 33):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 34):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 36):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 37):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 38):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 40):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 41):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 42):
+   -- Unknown index keyword {Nu}&\begingroupNusselt-Zahl\endgroup&\begingroup\endgroup&\begingroup$\unitfrac.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 43):
+   -- Missing arguments -- need two (premature LFD).
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 44):
+   -- Unknown index keyword \end.
+!! Input index error (file = Arbeit(bitte umbennen).idx, line = 46):
+   -- Unknown index keyword \end.
+done (0 entries accepted, 30 rejected).
+Scanning input file Arbeit(bitte umbennen).nlo....done (3 entries accepted, 0 rejected).
+Overall 2 files read (3 entries accepted, 30 rejected).
+Sorting entries....done (4 comparisons).
+Generating output file Arbeit(bitte umbennen).nls....done (43 lines written, 0 warnings).
+Output written in Arbeit(bitte umbennen).nls.
+Transcript written in Arbeit(bitte umbennen).ilg.
